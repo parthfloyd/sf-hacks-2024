@@ -7,10 +7,12 @@ const port = process.env.PORT || 4000;
 const app = express();
 
 const authRoute = require('./routes/auth.route');
+const profileRoute = require('./routes/profile.route');
 
 app.use(express.json());
 app.use(cors());
 app.use('/auth',authRoute);
+app.use('/api',profileRoute);
 
 app.listen(port, (err) => {
     if(err){
