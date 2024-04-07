@@ -8,11 +8,13 @@ const app = express();
 
 const authRoute = require('./routes/auth.route');
 const profileRoute = require('./routes/profile.route');
+const llmRoute = require('./routes/llm.route');
 
 app.use(express.json());
 app.use(cors());
 app.use('/auth',authRoute);
 app.use('/api',profileRoute);
+app.use('/llm', llmRoute);
 
 app.listen(port, (err) => {
     if(err){
