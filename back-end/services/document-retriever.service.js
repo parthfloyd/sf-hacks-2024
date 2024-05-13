@@ -8,18 +8,20 @@ const {
     JSONLinesLoader,
 } = require("langchain/document_loaders/fs/json");
 
-const loader = new DirectoryLoader(
-    "uploads",
-    {
-        ".json": (path) => new JSONLoader(path, "/texts"),
-        ".jsonl": (path) => new JSONLinesLoader(path, "/html"),
-        ".txt": (path) => new TextLoader(path),
-        ".csv": (path) => new CSVLoader(path, "text"),
-        ".pdf": (path) => new PDFLoader(path),
-    }
-);
 
-const loadDocsToLLM = async () => {
+
+const loadDocsToLLM = async (folder) => {
+    const loader = new DirectoryLoader(
+        "uploads/" + folder,
+        {
+            ".json": (path) => new JSONLoader(path, "/texts"),
+            ".jsonl": (path) => new JSONLinesLoader(path, "/html"),
+            ".txt": (path) => new TextLoader(path),
+            ".csv": (path) => new CSVLoader(path, "text"),
+            ".pdf": (path) => new PDFLoader(path),
+        }
+    );
+
     const docs = await loader.load();
     console.log("Loaded documents", docs.length);
     return docs;
