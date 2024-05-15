@@ -22,7 +22,7 @@ export default function TimelineUploadPage() {
       },
     };
     axios.post(url, formData, config).then((response) => {
-      console.log(response.data);
+      alert("File uploaded successfully")
     });
 
   }
@@ -41,7 +41,7 @@ export default function TimelineUploadPage() {
             <input type="file" className={styles.uploadInput} onChange={handleChange}/>
           </div>
 
-          <button type="button" className={styles.btn} name="uploadbutton">Upload file</button>
+          <button type="button" className={styles.btn} name="uploadbutton" onClick={handleSubmit}>Upload file</button>
 
         </div>
       </div>

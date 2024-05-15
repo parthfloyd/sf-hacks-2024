@@ -1,5 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
 
+.body {
+	color: rgb(var(--foreground-rgb));
+	background: linear-gradient(
+		to bottom,
+		transparent,
+		rgb(var(--background-end-rgb))
+	  )
+	  rgb(var(--background-start-rgb));
+  }
+  
 .frame {
 	position: absolute;
 	top: 50%;

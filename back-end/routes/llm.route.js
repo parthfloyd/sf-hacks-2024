@@ -33,9 +33,9 @@ const timelineStorage = multer.diskStorage({
   },
 });
   
-const uploadMain = multer({ mainStorage });
-const uploadEmail = multer({ emailStorage });
-const uploadTimeline = multer({ timelineStorage });
+const uploadMain = multer({storage: mainStorage });
+const uploadEmail = multer({storage: emailStorage });
+const uploadTimeline = multer({storage: timelineStorage });
 
 
 // Route to fetch user profile info

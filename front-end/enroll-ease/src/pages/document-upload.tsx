@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import styles from './document-upload.module.css'
 
+
 export default function DocumentUploadPage() {
   const [file, setFile] = useState<File>()
 
@@ -27,6 +28,7 @@ export default function DocumentUploadPage() {
 
   }
   return(
+    <>
     <form onSubmit={handleSubmit}>
       <div className={styles.frame}>
         <div className={styles.center}>
@@ -46,5 +48,6 @@ export default function DocumentUploadPage() {
         </div>
       </div>
     </form>
+    </>
   );
 }
